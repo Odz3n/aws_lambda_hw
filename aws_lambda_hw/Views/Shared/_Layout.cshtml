@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Order Processing</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/aws_lambda_hw.styles.css"
+          asp-append-version="true" />
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold"
+                   asp-controller="Home"
+                   asp-action="Index">
+                    Order Processing
+                </a>
+
+                <div class="ms-auto">
+                    <a class="btn btn-outline-light btn-sm"
+                       asp-controller="Home"
+                       asp-action="Index">
+                        Create Order
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="container flex-grow-1 py-4">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top bg-white py-3 mt-auto">
+        <div class="container text-center text-muted small">
+            &copy; 2026 Order Processing
+            <span class="mx-2">|</span>
+            ASP.NET Core MVC · Amazon SQS · AWS Lambda
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
